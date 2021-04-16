@@ -17,6 +17,8 @@
 #include <cstring>
 #include <ctype.h>
 
+
+
 using namespace std;
 
 using namespace Microsoft::CognitiveServices::Speech;
@@ -287,7 +289,7 @@ void default_init() {
 	}
 	else if (dt == "double")
 	{
-		double value_int = std::stoi(value);
+		double value_int = std::stoi(value);//string to integer
 		value_int = value_int + 0.000000;
 		str = dt + " " + name + " = " + to_string(value_int);
 	}
@@ -298,8 +300,168 @@ void default_init() {
 	cout << "------------------\n";
 }
 
+//Functions for If-Else Part -------------------------
+
+vector<string> split(string s)
+{
+	istringstream iss(s);
+	vector<string> result;
+	for (string s1; iss >> s1;)
+		result.push_back(s1);
+	return result;
+}
+
+string generate_symbol(string s)
+{
+	if (s.find("less than") != s.npos)
+		return "<";
+	else if (s.find("less than or equal") != s.npos || s.find("less than equal") != s.npos)
+		return "<=";
+	else if (s.find("greater than or equal") != s.npos || s.find("greater than equal") != s.npos)
+		return ">=";
+	else if (s.find("greater than") != s.npos)
+		return ">";
+	else if (s.find("equal to equal to") != s.npos)
+		return "==";
+	else if (s.find("not equal") != s.npos)
+		return "!=";
+	else if (s.find("equal to") != s.npos)
+		return "=";
+	else
+		return "Invalid condition";
+}
+
+void user_defined_if_else()
+{
+	string choice, condition, sym, f_syntax;
+	cout << "Which block do you want to generate?" << endl;
+	cout << "If\tElse If\t\tElse" << endl;
+	choice = recognize_from_mic();
+	//choice = "if";
+
+	if (choice.find("if") != choice.npos)
+	{
+		cout << "Specify the condition for if block" << endl;
+		condition = recognize_from_mic();
+		//condition = "i less than j";
+		vector<string> uif_syntax = split(condition);
+		sym = generate_symbol(condition);
+		if (sym != "Invalid condition")
+		{
+			f_syntax = "if (" + uif_syntax[0] + " " + sym + " " + uif_syntax[uif_syntax.size() - 1] + ")";
+			cout << f_syntax << "\n{"
+				<< "\n   //if body"
+				<< "\n}" << endl;
+		}
+		else
+			cout << sym << endl;
+	}
+
+	else if (choice.find("else if") != choice.npos)
+	{
+		cout << "Specify the condition for else if block" << endl;
+		condition = recognize_from_mic();
+		//condition = "i less than j";
+		vector<string> uelif_syntax = split(condition);
+		sym = generate_symbol(condition);
+		if (sym != "Invalid condition")
+		{
+			f_syntax = "else if (" + uelif_syntax[0] + " " + sym + " " + uelif_syntax[uelif_syntax.size() - 1] + ")";
+			cout << f_syntax << "\n{"
+				<< "\n   //else if body"
+				<< "\n}" << endl;
+		}
+		else
+			cout << sym << endl;
+	}
+
+	else if (choice.find("else") != choice.npos)
+	{
+		f_syntax = "else";
+		cout << f_syntax << "\n{"
+			<< "\n   //else body"
+			<< "\n}" << endl;
+	}
+}
+
+void default_if_else()
+{
+	//syntax - generate else block
+
+	string syntax, f_syntax, sym;
+	syntax = recognize_from_mic();
+	//syntax = "generate else block";
+	vector<string> sp_syntax = split(syntax);
+	sym = generate_symbol(syntax);
+
+	//syntax - generate if block with condition t less than 10
+	if (syntax.find("generate if") != string::npos)
+	{
+		if (sym != "Invalid condition")
+		{
+			f_syntax = "if (" + sp_syntax[5] + " " + sym + " " + sp_syntax[sp_syntax.size() - 1] + ")";
+			cout << f_syntax << "\n{"
+				<< "\n   //if body"
+				<< "\n}" << endl;
+		}
+		else
+			cout << sym << endl;
+	}
+
+	//syntax - generate else if block with condition t greater than 10
+	else if (syntax.find("generate else if") != string::npos) //check for (syntax.find("generate else") != string::npos && syntax.find("if") != string::npos)
+	{
+		if (sym != "Invalid condition")
+		{
+			f_syntax = "else if (" + sp_syntax[6] + " " + sym + " " + sp_syntax[sp_syntax.size() - 1] + ")";
+			cout << f_syntax << "\n{"
+				<< "\n   //if body"
+				<< "\n}" << endl;
+		}
+		else
+			cout << sym << endl;
+	}
+
+	//syntax - generate else block
+	else if (syntax.find("generate else") != string::npos)
+	{
+		f_syntax = "else";
+		cout << f_syntax << "\n{"
+			<< "\n   //else body"
+			<< "\n}" << endl;
+	}
+
+	else
+		cout << "Invalid Syntax";
+}
+
+void if_else_code() {
+
+	string str;
+	cout << "If-Else Ladder Declaration" << endl;
+	cout << "1. User Defined Syntax\n2. Default Syntax" << endl;
+	cout << "Enter your choice - " << endl;
+
+	str = recognize_from_mic();
+	//str = "user";
+
+	if (str.find("user") != string::npos)
+	{
+		user_defined_if_else();
+	}
+	else if (str.find("default") != string::npos)
+	{
+		default_if_else();
+	}
+	else
+		cout << "Invalid Choice" << endl;
+}
+//-------------------------------------------
+
+
+
 int main() {
-	
+	/*
 	int choice;
 
 	string syntax;
@@ -352,6 +514,11 @@ int main() {
 	//Initialize integer variable X with value 13.
 	//Initialize character variable car with value T.
 	//Initialize float variable X with value 4.8.
+	*/
 
+	//cout << "If else section"<<endl;
+	//if_else_code();
+
+	
 	return 0;
 }
