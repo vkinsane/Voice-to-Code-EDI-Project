@@ -15,7 +15,55 @@
     {
         "Entry"
         {
+        "MsmKey" = "8:_480E1C51BCC8B5AAD40864F2674EAC74"
+        "OwnerKey" = "8:_DD53613BF05F4ED99979DF174E40FCD4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4B53B7080798CC64506050C741404A7B"
+        "OwnerKey" = "8:_DD53613BF05F4ED99979DF174E40FCD4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_4FBA873EEAD172F1B4513717B0C4F1DB"
+        "OwnerKey" = "8:_DD53613BF05F4ED99979DF174E40FCD4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_6177DD2E5A3A473F9098147B4300B57C"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_6474F750C518A30098773AA727077F8F"
+        "OwnerKey" = "8:_DD53613BF05F4ED99979DF174E40FCD4"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_68A9D8B359A84864A89227E28D487040"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7166D443DFC5402EA67A3BC6D6057BD7"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_7497A2FDFC38458ABEDF4D4129E58F92"
+        "OwnerKey" = "8:_UNDEFINED"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_8B8F6D6DEE7A46D095B241A7B102329B"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
@@ -43,6 +91,22 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+                "Items"
+                {
+                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
+                    {
+                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
+                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
+                    }
+                }
+            }
         }
         "Release"
         {
@@ -59,6 +123,14 @@
         "PrivateKeyFile" = "8:"
         "TimeStampServer" = "8:"
         "InstallerBootstrapper" = "3:2"
+            "BootstrapperCfg:{63ACBE69-63AA-4F98-B2B6-99F9E24495F2}"
+            {
+            "Enabled" = "11:TRUE"
+            "PromptEnabled" = "11:TRUE"
+            "PrerequisitesLocation" = "2:1"
+            "Url" = "8:"
+            "ComponentsUrl" = "8:"
+            }
         }
     }
     "Deployable"
@@ -80,10 +152,170 @@
         }
         "File"
         {
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_480E1C51BCC8B5AAD40864F2674EAC74"
+            {
+            "SourcePath" = "8:ucrtbased.dll"
+            "TargetName" = "8:ucrtbased.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_BEF3B0FADDA441BCA3D3A020100EB732"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4B53B7080798CC64506050C741404A7B"
+            {
+            "SourcePath" = "8:Microsoft.CognitiveServices.Speech.core.dll"
+            "TargetName" = "8:Microsoft.CognitiveServices.Speech.core.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_BEF3B0FADDA441BCA3D3A020100EB732"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_4FBA873EEAD172F1B4513717B0C4F1DB"
+            {
+            "SourcePath" = "8:MSVCP140D.dll"
+            "TargetName" = "8:MSVCP140D.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_BEF3B0FADDA441BCA3D3A020100EB732"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
             "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6177DD2E5A3A473F9098147B4300B57C"
             {
             "SourcePath" = "8:logo.ico"
             "TargetName" = "8:logo.ico"
+            "Tag" = "8:"
+            "Folder" = "8:_BEF3B0FADDA441BCA3D3A020100EB732"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_6474F750C518A30098773AA727077F8F"
+            {
+            "SourcePath" = "8:VCRUNTIME140D.dll"
+            "TargetName" = "8:VCRUNTIME140D.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_BEF3B0FADDA441BCA3D3A020100EB732"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:TRUE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_68A9D8B359A84864A89227E28D487040"
+            {
+            "SourcePath" = "8:..\\x64\\Debug\\Microsoft.CognitiveServices.Speech.extension.codec.dll"
+            "TargetName" = "8:Microsoft.CognitiveServices.Speech.extension.codec.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_BEF3B0FADDA441BCA3D3A020100EB732"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7166D443DFC5402EA67A3BC6D6057BD7"
+            {
+            "SourcePath" = "8:..\\x64\\Debug\\Microsoft.CognitiveServices.Speech.extension.kws.dll"
+            "TargetName" = "8:Microsoft.CognitiveServices.Speech.extension.kws.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_BEF3B0FADDA441BCA3D3A020100EB732"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_7497A2FDFC38458ABEDF4D4129E58F92"
+            {
+            "SourcePath" = "8:..\\x64\\Debug\\Microsoft.CognitiveServices.Speech.core.dll"
+            "TargetName" = "8:Microsoft.CognitiveServices.Speech.core.dll"
+            "Tag" = "8:"
+            "Folder" = "8:_BEF3B0FADDA441BCA3D3A020100EB732"
+            "Condition" = "8:"
+            "Transitive" = "11:FALSE"
+            "Vital" = "11:TRUE"
+            "ReadOnly" = "11:FALSE"
+            "Hidden" = "11:FALSE"
+            "System" = "11:FALSE"
+            "Permanent" = "11:FALSE"
+            "SharedLegacy" = "11:FALSE"
+            "PackageAs" = "3:1"
+            "Register" = "3:1"
+            "Exclude" = "11:FALSE"
+            "IsDependency" = "11:FALSE"
+            "IsolateTo" = "8:"
+            }
+            "{1FB2D0AE-D3B9-43D4-B9DD-F88EC61E35DE}:_8B8F6D6DEE7A46D095B241A7B102329B"
+            {
+            "SourcePath" = "8:..\\x64\\Debug\\Microsoft.CognitiveServices.Speech.extension.audio.sys.dll"
+            "TargetName" = "8:Microsoft.CognitiveServices.Speech.extension.audio.sys.dll"
             "Tag" = "8:"
             "Folder" = "8:_BEF3B0FADDA441BCA3D3A020100EB732"
             "Condition" = "8:"
@@ -130,7 +362,7 @@
             }
             "{3C67513D-01DD-4637-8A68-80971EB9504F}:_BEF3B0FADDA441BCA3D3A020100EB732"
             {
-            "DefaultLocation" = "8:[ProgramFilesFolder][Manufacturer]\\[ProductName]"
+            "DefaultLocation" = "8:[ProgramFiles64Folder][Manufacturer]\\[ProductName]"
             "Name" = "8:#1925"
             "AlwaysCreate" = "11:FALSE"
             "Condition" = "8:"
@@ -168,7 +400,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Joyce"
         "ProductCode" = "8:{A96EC9B6-718F-4F26-93EB-A838A0F742F6}"
-        "PackageCode" = "8:{1BB655D1-5A11-47A2-A34C-DBFE5F7FACC7}"
+        "PackageCode" = "8:{75F798F5-C5E2-41B3-AFF3-EA9216B909D5}"
         "UpgradeCode" = "8:{002800DA-E815-4216-BB5E-14F7441B3FDF}"
         "AspNetVersion" = "8:2.0.50727.0"
         "RestartWWWService" = "11:FALSE"
@@ -176,12 +408,12 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:abhishek75028@gmail.com"
+        "Manufacturer" = "8:vishal.khandate19@vit.edu"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:Joyce"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:abhishek75028@gmail.com"
+        "ARPCONTACT" = "8:vishal.khandate19@vit.edu"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
@@ -189,7 +421,7 @@
         "ARPIconIndex" = "3:0"
         "SearchPath" = "8:"
         "UseSystemSearchPath" = "11:TRUE"
-        "TargetPlatform" = "3:0"
+        "TargetPlatform" = "3:1"
         "PreBuildEvent" = "8:"
         "PostBuildEvent" = "8:"
         "RunPostBuildEvent" = "3:0"
@@ -717,7 +949,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DD53613BF05F4ED99979DF174E40FCD4"
             {
-            "SourcePath" = "8:..\\x64\\Debug\\helloworld.exe"
+            "SourcePath" = "8:..\\x64\\Debug\\VoiceToCode.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_BEF3B0FADDA441BCA3D3A020100EB732"

@@ -1,70 +1,58 @@
-# Getting Started with Create React App
+  
+# Voice to Code
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Objective of the project is to convert user given commands into code using [Microsoft's speech recognition SDK ](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-sdk?tabs=windows%2Cubuntu%2Cios-xcode%2Cmac-xcode%2Candroid-studio)
+& the software used for converting text to speech is [eSpeak](http://espeak.sourceforge.net/)
 
-## Available Scripts
+## Microsoft speech recognition SDK 
 
-In the project directory, you can run:
+ - [Overview](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/speech-sdk?tabs=windows%2Cubuntu%2Cios-xcode%2Cmac-xcode%2Candroid-studio)
+ - [Visual Studio Setup](https://docs.microsoft.com/en-us/azure/cognitive-services/speech-service/quickstarts/setup-platform?tabs=dotnet%2Cwindows%2Cjre%2Cbrowser&pivots=programming-language-cpp)
 
-### `npm start`
+## eSpeak 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+ - [Website](http://espeak.sourceforge.net/)
+ - [Setup](https://youtu.be/MC2K6yotimY)
+  
+## Screenshots
+1. Intro : The voice assistant will ask you to speak out the commands.
+![App Screenshot](https://raw.githubusercontent.com/vkinsane/Voice-to-Code-EDI-Project/master/helloworld/screenshots/intro.png)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+2. Code Generation : The algorithm will take those inputs check for which syntax to generate.
+![App Screenshot](https://raw.githubusercontent.com/vkinsane/Voice-to-Code-EDI-Project/master/helloworld/screenshots/code_output.png)
+  
+## Demo
 
-### `npm test`
+- Demo GIF
+![App GIF](https://raw.githubusercontent.com/vkinsane/Voice-to-Code-EDI-Project/master/helloworld/screenshots/EDI_Voice_To_Code_GIF.gif)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- [Video](https://drive.google.com/file/d/1B4acidODZy13kpE64l9zTF_SL0-eiIxZ/view?usp=sharing)
+  
+## Installation
+Install this project from these download links
 
-### `npm run build`
+[Download for 32-bit 📦](https://drive.google.com/u/1/uc?id=18QgEfGmLuBqq2eg0jmhZHPIOqVY0MMhD&export=download)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+[Download for 64-bit 📦](https://drive.google.com/u/1/uc?id=1tICD6DGrasLVAWkosGjNeGvxCXHK5V9L&export=download)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Authors
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- [Chetan Lohkare](https://github.com/chetan-187)
 
-### `npm run eject`
+- [Prathmesh Kulkarni](https://github.com/Prathamesh21Kulkarni)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- [Vishal Khandate](https://github.com/vkinsane)
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- [Harsh Kulkarni](https://github.com/harshkulkarni17)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- [Sanket Kawade](https://www.instagram.com/sanketkawade62/)
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+  
+## Acknowledgements
 
-## Learn More
+ - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
+ - [Awesome README](https://github.com/matiassingers/awesome-readme)
+ - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  
+      
