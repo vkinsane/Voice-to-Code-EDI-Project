@@ -1,65 +1,105 @@
-#include "stdafx.h"
-// <code>
-#include <iostream>
 #include <speechapi_cxx.h>
-#include <cstdio>
+#include "VoicetoCode.h"
+#include <fstream>
+#include <iostream>
+#include <sstream>
+#include <vector>
+#include <string>
+#include <string.h>
 #include <cstring>
+#include <ctype.h>
 using namespace std;
 using namespace Microsoft::CognitiveServices::Speech;
+using namespace Microsoft::CognitiveServices::Speech::Audio;
 
-void recognizeSpeech()
+void welcome()
 {
-    // Creates an instance of a speech config with specified subscription key and service region.
-    // Replace with your own subscription key and service region (e.g., "westus").
-    //auto config = SpeechConfig::FromSubscription("YourSubscriptionKey", "YourServiceRegion");
-    auto config = SpeechConfig::FromSubscription("e776a7bfcae64eae8e6a930595ec2809", "eastus");
-
-    // Creates a speech recognizer.
-    auto recognizer = SpeechRecognizer::FromConfig(config);
-    cout << "Say something...\n";
-
-    // Starts speech recognition, and returns after a single utterance is recognized. The end of a
-    // single utterance is determined by listening for silence at the end or until a maximum of 15
-    // seconds of audio is processed.  The task returns the recognition text as result. 
-    // Note: Since RecognizeOnceAsync() returns only a single utterance, it is suitable only for single
-    // shot recognition like command or query. 
-    // For long-running multi-utterance recognition, use StartContinuousRecognitionAsync() instead.
-    auto result = recognizer->RecognizeOnceAsync().get();
-
-    // Checks result.
-    if (result->Reason == ResultReason::RecognizedSpeech)
-    {
-        cout << "We recognized: " << result->Text << std::endl;
-    }
-    else if (result->Reason == ResultReason::NoMatch)
-    {
-        cout << "NOMATCH: Speech could not be recognized." << std::endl;
-    }
-    else if (result->Reason == ResultReason::Canceled)
-    {
-        auto cancellation = CancellationDetails::FromResult(result);
-        cout << "CANCELED: Reason=" << (int)cancellation->Reason << std::endl;
-
-        if (cancellation->Reason == CancellationReason::Error)
-        {
-            cout << "CANCELED: ErrorCode= " << (int)cancellation->ErrorCode << std::endl;
-            cout << "CANCELED: ErrorDetails=" << cancellation->ErrorDetails << std::endl;
-            cout << "CANCELED: Did you update the subscription info?" << std::endl;
-        }
-    }
+	string instruction = "Welcome User";
+	cout << "\n\n        ******************************************* ["<< instruction <<"] *********************************************\n"<< endl;
+	espeak(instruction, "female");
+	instruction = "I am Joyce, your code assistant";
+	cout << "-[ "<<instruction<<" ]" << endl;
+	espeak(instruction, "female");
+	instruction = "You can tell me some commands and I will generate code accordingly";
+	cout << "-[ " << instruction << " ]" << endl;
+	espeak(instruction, "female");
+	instruction = "Here are few commands, Try saying any one of them.";
+	cout << "-[ " << instruction << " ]" << endl;
+	espeak(instruction, "female");
+	instruction = "-> Generate a for loop \n-> Initialize Variable \n-> Create a switch case \n-> Create if else ladder \n-> Declare or Define function";
+	cout << instruction << endl;
 }
 
-int wmain()
+
+void check_string(string s)
 {
-    try
-    {
-        recognizeSpeech();
-    }
-    catch (exception e)
-    {
-        cout << e.what();
-    }
-    cout << "Please press a key to continue.\n";
-    cin.get();
-    return 0;
+	if ((s.find("for loop") != s.npos) || (s.find("forloop") != s.npos) || (s.find("loop") != s.npos) || s.find("looping") != s.npos)
+	{
+		call_loops(s);
+	}
+	else if ((s.find("if else") != s.npos) || (s.find("if") != s.npos) || (s.find("condition ladder") != s.npos) || (s.find("conditional block") != s.npos))
+	{
+		if_else_code();
+	}
+	else if ((s.find("declare function") != s.npos) || (s.find("define function") != s.npos) || (s.find("function") != s.npos))
+	{
+		init_function(s);
+	}
+	else if ((s.find("switch case") != s.npos) || (s.find("switch ladder") != s.npos))
+	{
+		switchcase();
+	}
+	else if ((s.find("array") != s.npos))
+	{
+		array_s();
+	}
+	else if ((s.find("Variable") != s.npos) || (s.find("variable") != s.npos) || (s.find("create variable") != s.npos) || (s.find("make variable") != s.npos))
+	{
+		variableInitialization();
+	}
+	else if ((s.find("exit") != s.npos)|| (s.find("Exit") != s.npos) || (s.find("Close") != s.npos) || (s.find("close") != s.npos))
+	{
+		exit();
+	}
+	else
+	{
+		string instruction = "Sorry , I didn't find anything";
+		cout << instruction << "!" << endl;
+		espeak(instruction, "female");
+	}
+}
+
+int main()
+{
+	//File handling
+	my_file.open("codes.txt", ios::out);
+	if (!my_file)
+	{
+		//cout << "File not created!";
+	}
+	else
+	{
+	//	cout << "File created successfully!";
+		// my_file << "\n";
+	}
+	string s, confirm, instruction;
+	welcome();
+	do
+	{
+		s = recognize_from_mic();
+		check_string(s);
+		//string s = "generate if block with condition t less than 10";
+		if (exitInvoked == false) {
+			instruction = "Do you want to continue?";
+			cout << "\n" <<instruction << endl;
+			espeak(instruction, "female");
+			confirm = recognize_from_mic();
+			confirm = lower(confirm);
+		}
+	} while (confirm.find("yes") != s.npos);
+	if (exitInvoked == false)
+	{
+		exit();
+	}
+	my_file.close();
 }
